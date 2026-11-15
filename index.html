@@ -1,746 +1,557 @@
-!DOCTYPE html
-html lang=en
-head
-meta charset=UTF-8
-meta name=viewport content=width=device-width, initial-scale=1.0
-titlePLAY AT HOMEtitle
-
-style
- {
-  margin 0;
-  padding 0;
-  box-sizing border-box;
-  font-family Arial, sans-serif;
-}
-
-body {
-  background #090909;
-  color white;
-}
-
-header {
-  background #111;
-  padding 20px 6%;
-  display flex;
-  justify-content space-between;
-  align-items center;
-  flex-wrap wrap;
-  gap 15px;
-  border-bottom 1px solid #292929;
-}
-
-.logo {
-  color #00e676;
-  font-size 25px;
-  font-weight 900;
-}
-
-nav {
-  display flex;
-  gap 10px;
-  flex-wrap wrap;
-}
-
-nav button {
-  background none;
-  border none;
-  color white;
-  cursor pointer;
-  font-weight bold;
-  padding 10px;
-}
-
-nav buttonhover {
-  color #00e676;
-}
-
-.page {
-  display none;
-}
-
-.page.active {
-  display block;
-}
-
-.hero {
-  min-height 420px;
-  display flex;
-  flex-direction column;
-  justify-content center;
-  align-items center;
-  text-align center;
-  padding 60px 20px;
-  background linear-gradient(135deg, #101010, #123d27);
-}
-
-.hero h1 {
-  font-size clamp(40px, 8vw, 75px);
-  font-weight 900;
-}
-
-.green {
-  color #00e676;
-}
-
-.hero p {
-  color #ccc;
-  margin 18px 0 25px;
-}
-
-.btn {
-  display inline-block;
-  background #00e676;
-  color #050505;
-  padding 14px 24px;
-  border none;
-  border-radius 7px;
-  font-weight bold;
-  cursor pointer;
-  text-decoration none;
-}
-
-.container {
-  max-width 1100px;
-  margin auto;
-  padding 45px 20px;
-}
-
-h2 {
-  font-size 30px;
-  margin-bottom 25px;
-}
-
-.cards {
-  display grid;
-  grid-template-columns repeat(auto-fit, minmax(230px, 1fr));
-  gap 20px;
-}
-
-.card {
-  background #161616;
-  border 1px solid #292929;
-  border-radius 12px;
-  padding 22px;
-}
-
-.card h3 {
-  margin-bottom 12px;
-}
-
-.card p {
-  color #bbb;
-  line-height 1.6;
-}
-
-.price {
-  color #00e676;
-  font-size 23px;
-  font-weight bold;
-  margin 15px 0;
-}
-
-.form-box {
-  background #151515;
-  padding 25px;
-  border-radius 12px;
-  max-width 650px;
-  margin 25px auto;
-}
-
-label {
-  display block;
-  margin 15px 0 8px;
-  color #ddd;
-}
-
-input, select, textarea {
-  width 100%;
-  padding 13px;
-  background #222;
-  border 1px solid #444;
-  border-radius 7px;
-  color white;
-}
-
-input[type=file] {
-  padding 12px;
-}
-
-textarea {
-  min-height 90px;
-  resize vertical;
-}
-
-inputfocus, selectfocus, textareafocus {
-  outline 1px solid #00e676;
-}
-
-.form-box .btn {
-  width 100%;
-  margin-top 20px;
-}
-
-.note {
-  color #aaa;
-  font-size 13px;
-  line-height 1.5;
-  margin-top 9px;
-}
-
-.products {
-  display grid;
-  grid-template-columns repeat(auto-fit, minmax(220px, 1fr));
-  gap 20px;
-}
-
-.product {
-  background #161616;
-  border-radius 12px;
-  overflow hidden;
-  border 1px solid #292929;
-}
-
-.product img {
-  width 100%;
-  height 175px;
-  object-fit cover;
-}
-
-.product-info {
-  padding 18px;
-}
-
-.product-info h3 {
-  margin-bottom 10px;
-}
-
-.product-info p {
-  color #00e676;
-  margin-bottom 15px;
-}
-
-.product-info .btn {
-  width 100%;
-  text-align center;
-}
-
-.categories {
-  display flex;
-  gap 10px;
-  flex-wrap wrap;
-  margin-bottom 25px;
-}
-
-.categories button {
-  background #222;
-  border 1px solid #444;
-  color white;
-  padding 11px 17px;
-  border-radius 7px;
-  cursor pointer;
-}
-
-.categories buttonhover {
-  background #00e676;
-  color black;
-}
-
-.points-box {
-  background #14271c;
-  border 1px solid #00a94f;
-  padding 25px;
-  border-radius 12px;
-  text-align center;
-  margin-bottom 25px;
-}
-
-.points-box h3 {
-  font-size 35px;
-  color #00e676;
-}
-
-footer {
-  text-align center;
-  background #111;
-  padding 30px 15px;
-  color #888;
-  margin-top 50px;
-}
-
-@media(max-width600px) {
-  header {
-    flex-direction column;
-  }
-
-  nav {
-    justify-content center;
-  }
-
-  nav button {
-    font-size 12px;
-    padding 7px;
-  }
-}
-style
-head
-
-body
-
-header
-  div class=logoPLAY AT HOMEdiv
-
-  nav
-    button onclick=showPage('home')HOMEbutton
-    button onclick=showPage('booking')BOOKINGbutton
-    button onclick=showPage('marketplace')MARKETPLACEbutton
-    button onclick=showPage('loyalty')PLAY & EARNbutton
-  nav
-header
-
-!-- HOME PAGE --
-section id=home class=page active
-
-  div class=hero
-    h1PLAY span class=greenAT HOMEspanh1
-    pYour gaming experience, delivered to your door.p
-    button class=btn onclick=showPage('booking')
-      BOOK YOUR PLAYSTATION
-    button
-  div
-
-  div class=container
-    h2OUR RENTALSh2
-
-    div class=cards
-
-      div class=card
-        h3PlayStation Rentalh3
-        pEnjoy gaming at home with our PlayStation rental service.p
-        div class=price$18  hourdiv
-        button class=btn onclick=bookConsole('PlayStation')
-          BOOK NOW
-        button
-      div
-
-      div class=card
-        h3PS4 Pro Rentalh3
-        pEnjoy your favourite games with the PS4 Pro.p
-        div class=price$8  hourdiv
-        button class=btn onclick=bookConsole('PS4 Pro')
-          BOOK NOW
-        button
-      div
-
-    div
-  div
-
-section
-
-!-- BOOKING PAGE --
-section id=booking class=page
-
-  div class=hero
-    h1BOOK YOUR span class=greenGAMEspanh1
-    pComplete the form to request your booking.p
-  div
-
-  div class=container
-    div class=form-box
-
-      h2Booking Formh2
-
-      form id=bookingForm
-
-        labelYour full name label
-        input id=bookingName required placeholder=Full name
-
-        labelPhone number label
-        input id=bookingPhone type=tel required placeholder=Phone number
-
-        labelChoose your console label
-        select id=console required
-          option value=Select consoleoption
-          optionPlayStationoption
-          optionPS4 Prooption
-        select
-
-        labelChoose your game label
-        select id=game required
-          option value=Select gameoption
-          optionEA Sports FCoption
-          optionGTA Voption
-          optionCall of Dutyoption
-          optionMortal Kombatoption
-          optionNeed for Speedoption
-          optionOtheroption
-        select
-
-        labelBooking date label
-        input id=date type=date required
-
-        labelStart time label
-        input id=time type=time required
-
-        labelDuration (hours) label
-        select id=duration required
-          option value=Choose durationoption
-          option value=11 houroption
-          option value=22 hoursoption
-          option value=33 hoursoption
-          option value=44 hoursoption
-          option value=55 hoursoption
-        select
-
-        labelYour city label
-        input id=bookingCity required placeholder=Your city
-
-        labelYour delivery address label
-        textarea id=bookingAddress required placeholder=Full delivery addresstextarea
-
-        labelTake a photo of your ID card label
-        input
-          id=idCard
-          type=file
-          accept=image
-          capture=environment
-          required
-        
-
-        p class=note
-          The ID photo is requested for booking verification.
-          Explain the purpose and how it will be protected before collecting it.
-          The photo is not stored by this website.
-        p
-
-        label
-          input type=checkbox id=idConsent required style=widthauto
-          I understand why this ID photo is being requested.
-        label
-
-        labelAdditional detailslabel
-        textarea id=bookingDetails placeholder=Anything elsetextarea
-
-        button class=btn type=submit
-          SEND BOOKING REQUEST
-        button
-
-      form
-    div
-  div
-
-section
-
-!-- MARKETPLACE PAGE --
-section id=marketplace class=page
-
-  div class=hero
-    h1MARKET span class=greenPLAYSspanh1
-    pBuy, sell and discover gaming products.p
-  div
-
-  div class=container
-
-    h2Explore Productsh2
-
-    div class=categories
-      button onclick=filterProducts('all')Allbutton
-      button onclick=filterProducts('console')Consolesbutton
-      button onclick=filterProducts('controller')Controllersbutton
-      button onclick=filterProducts('games')Gamesbutton
-      button onclick=filterProducts('accessory')Accessoriesbutton
-    div
-
-    div class=products
-
-      div class=product data-category=console
-        img src=httpsplacehold.co600x400222ffftext=PlayStation+5 alt=PlayStation 5
-        div class=product-info
-          h3PlayStation 5h3
-          pContact for pricep
-          button class=btn onclick=selectProduct('PlayStation 5')BUY NOWbutton
-        div
-      div
-
-      div class=product data-category=console
-        img src=httpsplacehold.co600x400222ffftext=PS4+Pro alt=PS4 Pro
-        div class=product-info
-          h3PS4 Proh3
-          pContact for pricep
-          button class=btn onclick=selectProduct('PS4 Pro')BUY NOWbutton
-        div
-      div
-
-      div class=product data-category=controller
-        img src=httpsplacehold.co600x400222ffftext=Controller alt=Controller
-        div class=product-info
-          h3Gaming Controllerh3
-          pContact for pricep
-          button class=btn onclick=selectProduct('Gaming Controller')BUY NOWbutton
-        div
-      div
-
-      div class=product data-category=games
-        img src=httpsplacehold.co600x400222ffftext=Video+Games alt=Video games
-        div class=product-info
-          h3Video Gamesh3
-          pContact for pricep
-          button class=btn onclick=selectProduct('Video Games')BUY NOWbutton
-        div
-      div
-
-      div class=product data-category=accessory
-        img src=httpsplacehold.co600x400222ffftext=Gaming+Accessories alt=Gaming accessories
-        div class=product-info
-          h3Gaming Accessoriesh3
-          pContact for pricep
-          button class=btn onclick=selectProduct('Gaming Accessories')BUY NOWbutton
-        div
-      div
-
-    div
-
-    div class=form-box id=orderBox
-      h2Order a Producth2
-
-      form id=orderForm
-
-        labelYour name label
-        input id=customerName required
-
-        labelPhone number label
-        input id=customerPhone type=tel required
-
-        labelProduct label
-        input id=selectedProduct required
-
-        labelYour city label
-        input id=customerCity required
-
-        labelYour delivery address label
-        textarea id=customerAddress requiredtextarea
-
-        labelAdditional detailslabel
-        textarea id=orderDetailstextarea
-
-        button class=btn type=submitSEND ORDER ON WHATSAPPbutton
-      form
-    div
-
-    div class=form-box
-      h2Sell Your Producth2
-
-      form id=sellForm
-
-        labelYour name label
-        input id=sellerName required
-
-        labelProduct name label
-        input id=saleProduct required
-
-        labelCategory label
-        select id=saleCategory
-          optionConsoleoption
-          optionControlleroption
-          optionVideo gameoption
-          optionAccessoryoption
-          optionGaming setupoption
-        select
-
-        labelAsking price (MAD) label
-        input id=salePrice type=number required
-
-        labelCondition label
-        select id=saleCondition
-          optionBrand newoption
-          optionUsed - excellentoption
-          optionUsed - goodoption
-        select
-
-        labelProduct detailslabel
-        textarea id=saleDetailstextarea
-
-        button class=btn type=submitSUBMIT PRODUCTbutton
-      form
-    div
-
-  div
-section
-
-!-- PLAY AND EARN PAGE --
-section id=loyalty class=page
-
-  div class=hero
-    h1PLAY span class=green& EARNspanh1
-    pEvery rental brings you closer to a free gaming hour.p
-  div
-
-  div class=container
-
-    div class=points-box
-      h310 POINTSh3
-      pEarn 10 points for every 5 rental hours.p
-      br
-      h3100 POINTSh3
-      pRedeem 100 points for 1 free rental hour.p
-    div
-
-    div class=form-box
-      h2Points Calculatorh2
-
-      labelRental hourslabel
-      input type=number id=hours min=0 value=5
-
-      button class=btn onclick=calculatePoints()CALCULATEbutton
-
-      h3 id=pointsResult style=margin-top25px;color#00e676
-        You earn 10 points
-      h3
-
-      p class=note
-        This is an estimate. Actual customer points must be verified
-        and saved by the business.
-      p
-    div
-
-  div
-section
-
-footer
-  h3 class=greenPLAY AT HOMEh3
-  pGaming delivered to your door.p
-  p© 2026 PLAY AT HOMEp
-footer
-
-script
-const whatsapp = 212776081034;
-
-function showPage(pageId) {
-  document.querySelectorAll(.page).forEach(page = {
-    page.classList.remove(active);
-  });
-
-  document.getElementById(pageId).classList.add(active);
-  window.scrollTo({ top 0, behavior smooth });
-}
-
-function bookConsole(name) {
-  showPage(booking);
-  document.getElementById(console).value = name;
-}
-
-function filterProducts(category) {
-  document.querySelectorAll(.product).forEach(product = {
-    product.style.display =
-      category === all  product.dataset.category === category
-       block
-       none;
-  });
-}
-
-function selectProduct(name) {
-  document.getElementById(selectedProduct).value = name;
-  document.getElementById(orderBox).scrollIntoView({
-    behavior smooth
-  });
-}
-
-function sendWhatsApp(message) {
-  const url = httpswa.me + whatsapp +
-    text= + encodeURIComponent(message);
-
-  window.open(url, _blank);
-}
-
- BOOKING FORM
-document.getElementById(bookingForm).addEventListener(submit, async function(e) {
-  e.preventDefault();
-
-  const idFile = document.getElementById(idCard).files[0];
-
-  if (!idFile) {
-    alert(Please take a photo of your ID card.);
-    return;
-  }
-
-  const message =
-    PLAY AT HOME - BOOKING REQUESTnn +
-    Name  + bookingName.value + n +
-    Phone  + bookingPhone.value + n +
-    Console  + console.value + n +
-    Game  + game.value + n +
-    Date  + date.value + n +
-    Time  + time.value + n +
-    Duration  + duration.value +  hoursn +
-    City  + bookingCity.value + n +
-    Address  + bookingAddress.value + n +
-    ID photo selected by customern +
-    Details  + bookingDetails.value;
-
-   Share the selected photo through the phone's share menu
-  if (navigator.canShare && navigator.share &&
-      navigator.canShare({ files [idFile] })) {
-    try {
-      await navigator.share({
-        title PLAY AT HOME booking,
-        text message,
-        files [idFile]
-      });
-    } catch (error) {
-      if (error.name !== AbortError) {
-        alert(Photo sharing was not completed. Please try again.);
-      }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Play At Home – PlayStation rental, delivered</title>
+  <meta name="description" content="Rent a PlayStation by the hour and have it delivered to your door. Buy and sell gaming gear, and earn free hours.">
+  <style>
+    :root{
+      --bg:#0a0c0b; --surface:#151917; --surface2:#1d2220; --line:#2b322f;
+      --text:#f2f5f3; --muted:#a9b3ae; --accent:#00e676; --accent-ink:#04140b; --danger:#ff6b6b;
     }
-  } else {
-    alert(
-      Your browser cannot share the ID photo automatically.  +
-      WhatsApp will open with your booking details, but the photo  +
-      will need to be attached manually.
-    );
-    sendWhatsApp(message);
-  }
-});
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.5}
+    :focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 
- MARKETPLACE ORDER FORM
-document.getElementById(orderForm).addEventListener(submit, function(e) {
-  e.preventDefault();
+    header{position:sticky;top:0;z-index:10;background:rgba(10,12,11,.92);backdrop-filter:blur(8px);
+      display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;
+      padding:14px 6%;border-bottom:1px solid var(--line)}
+    .logo{color:var(--accent);font-size:22px;font-weight:900;letter-spacing:.5px}
+    nav{display:flex;gap:4px;flex-wrap:wrap}
+    nav button{background:none;border:0;border-bottom:2px solid transparent;color:var(--text);cursor:pointer;
+      font:inherit;font-weight:700;font-size:14px;padding:8px 10px}
+    nav button:hover{color:var(--accent)}
+    nav button[aria-current="page"]{color:var(--accent);border-bottom-color:var(--accent)}
 
-  const message =
-    MARKET PLAYS - ORDERnn +
-    Name  + customerName.value + n +
-    Phone  + customerPhone.value + n +
-    Product  + selectedProduct.value + n +
-    City  + customerCity.value + n +
-    Delivery address  + customerAddress.value + n +
-    Details  + orderDetails.value;
+    .page{display:none}
+    .page.active{display:block}
 
-  sendWhatsApp(message);
-});
+    .hero{min-height:380px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;
+      padding:60px 20px;background:linear-gradient(135deg,#0d100f,#123d27)}
+    .hero.small{min-height:220px}
+    .hero h1{font-size:clamp(36px,8vw,72px);font-weight:900;line-height:1.05}
+    .green{color:var(--accent)}
+    .hero p{color:#cfd8d3;margin:16px 0 24px;max-width:520px}
 
- SELLER FORM
-document.getElementById(sellForm).addEventListener(submit, function(e) {
-  e.preventDefault();
+    .btn{display:inline-block;background:var(--accent);color:var(--accent-ink);padding:13px 24px;border:0;border-radius:8px;
+      font:inherit;font-weight:800;cursor:pointer;text-decoration:none;text-align:center;transition:filter .15s}
+    .btn:hover{filter:brightness(1.1)}
+    .btn.ghost{background:transparent;color:var(--accent);border:1px solid var(--accent)}
 
-  const message =
-    MARKET PLAYS - SELLING REQUESTnn +
-    Seller  + sellerName.value + n +
-    Product  + saleProduct.value + n +
-    Category  + saleCategory.value + n +
-    Price  + salePrice.value +  MADn +
-    Condition  + saleCondition.value + n +
-    Details  + saleDetails.value;
+    .container{max-width:1100px;margin:auto;padding:44px 20px}
+    h2{font-size:28px;margin-bottom:22px}
+    .cards,.products{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px}
+    .card,.product{background:var(--surface);border:1px solid var(--line);border-radius:12px}
+    .card{padding:22px;display:flex;flex-direction:column}
+    .card h3{margin-bottom:10px}
+    .card p{color:var(--muted)}
+    .card .btn{margin-top:auto}
+    .price{color:var(--accent);font-size:24px;font-weight:800;margin:14px 0}
+    .price small{color:var(--muted);font-size:14px;font-weight:600}
 
-  sendWhatsApp(message);
-});
+    .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;margin-top:40px}
+    .steps div{border-left:3px solid var(--accent);padding-left:14px}
+    .steps strong{display:block;margin-bottom:4px}
+    .steps span{color:var(--muted);font-size:14px}
 
- POINTS CALCULATOR
-function calculatePoints() {
-  const hours = Math.max(0, Number(document.getElementById(hours).value)  0);
-  const points = Math.floor(hours  5)  10;
+    .form-box{background:var(--surface);border:1px solid var(--line);padding:26px;border-radius:12px;max-width:650px;margin:24px auto}
+    label{display:block;margin:16px 0 6px;color:#dfe6e2;font-size:14px;font-weight:600}
+    input,select,textarea{width:100%;padding:12px;background:var(--surface2);border:1px solid #3a4440;border-radius:8px;color:var(--text);font:inherit}
+    input[type=checkbox]{width:auto;margin-right:8px}
+    textarea{min-height:90px;resize:vertical}
+    input:focus,select:focus,textarea:focus{outline:2px solid var(--accent);border-color:transparent}
+    .check{display:flex;align-items:flex-start;font-weight:400;margin-top:14px}
+    .form-box .btn{width:100%;margin-top:20px}
+    .note{color:var(--muted);font-size:13px;margin-top:8px}
+    .error{color:var(--danger);font-size:13px;margin-top:6px;min-height:1em}
 
-  document.getElementById(pointsResult).textContent =
-    You earn  + points +  points;
-}
-script
+    .summary{background:#10241a;border:1px solid #1d6b43;border-radius:10px;padding:14px 16px;margin-top:20px;display:flex;justify-content:space-between;align-items:center}
+    .summary strong{color:var(--accent);font-size:22px}
 
-body
-html
+    .product{overflow:hidden;display:flex;flex-direction:column}
+    .product img{width:100%;height:170px;object-fit:cover;background:var(--surface2)}
+    .product-info{padding:18px;display:flex;flex-direction:column;flex:1}
+    .product-info h3{margin-bottom:6px}
+    .product-info p{color:var(--accent);margin-bottom:14px}
+    .product-info .btn{margin-top:auto;width:100%}
+    .categories{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px}
+    .categories button{background:var(--surface2);border:1px solid #3a4440;color:var(--text);padding:10px 16px;border-radius:8px;cursor:pointer;font:inherit}
+    .categories button:hover,.categories button.on{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+
+    .points-box{background:#10241a;border:1px solid #1d6b43;padding:24px;border-radius:12px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;text-align:center;margin-bottom:24px}
+    .points-box h3{font-size:34px;color:var(--accent)}
+    .points-box p{color:var(--muted)}
+    .bar{height:10px;background:var(--surface2);border-radius:99px;overflow:hidden;margin-top:18px}
+    .bar i{display:block;height:100%;width:0;background:var(--accent);transition:width .3s}
+
+    .toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(120px);background:var(--accent);color:var(--accent-ink);
+      padding:12px 20px;border-radius:8px;font-weight:700;transition:transform .25s;z-index:20;max-width:90vw}
+    .toast.show{transform:translateX(-50%) translateY(0)}
+
+    footer{text-align:center;background:var(--surface);padding:30px 15px;color:var(--muted);margin-top:50px}
+    footer a{color:var(--accent)}
+
+    @media(max-width:600px){header{justify-content:center}nav{justify-content:center}nav button{font-size:12px;padding:6px 7px}}
+    @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">PLAY AT HOME</div>
+    <nav aria-label="Main">
+      <button data-page="home">Home</button>
+      <button data-page="booking">Booking</button>
+      <button data-page="marketplace">Marketplace</button>
+      <button data-page="loyalty">Play &amp; Earn</button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HOME -->
+    <section id="home" class="page active">
+      <div class="hero">
+        <h1>PLAY <span class="green">AT HOME</span></h1>
+        <p>Rent a PlayStation by the hour. We bring it, set it up and pick it up.</p>
+        <button class="btn" data-page="booking">Book your PlayStation</button>
+      </div>
+      <div class="container">
+        <h2>Our rentals</h2>
+        <div class="cards">
+          <div class="card">
+            <h3>PlayStation</h3>
+            <p>Console and controllers, ready to play when it arrives.</p>
+            <div class="price">$18 <small>/ hour</small></div>
+            <button class="btn" data-book="PlayStation">Book now</button>
+          </div>
+          <div class="card">
+            <h3>PS4 Pro</h3>
+            <p>Your favourite games in smooth 4K-ready quality.</p>
+            <div class="price">$8 <small>/ hour</small></div>
+            <button class="btn" data-book="PS4 Pro">Book now</button>
+          </div>
+        </div>
+        <div class="steps">
+          <div><strong>1. Request</strong><span>Fill in the booking form.</span></div>
+          <div><strong>2. Confirm</strong><span>We confirm by WhatsApp.</span></div>
+          <div><strong>3. Play</strong><span>We deliver and set up at your door.</span></div>
+          <div><strong>4. Earn</strong><span>Collect points toward free hours.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BOOKING -->
+    <section id="booking" class="page">
+      <div class="hero small">
+        <h1>BOOK YOUR <span class="green">GAME</span></h1>
+        <p>Complete the form to request your booking.</p>
+      </div>
+      <div class="container">
+        <div class="form-box">
+          <h2>Booking form</h2>
+          <form id="bookingForm" novalidate>
+            <label for="bookingName">Full name</label>
+            <input id="bookingName" required autocomplete="name" placeholder="Full name">
+
+            <label for="bookingPhone">Phone number</label>
+            <input id="bookingPhone" type="tel" required autocomplete="tel" inputmode="tel" placeholder="e.g. 06 12 34 56 78">
+
+            <label for="console">Console</label>
+            <select id="console" required>
+              <option value="">Select console</option>
+              <option>PlayStation</option>
+              <option>PS4 Pro</option>
+            </select>
+
+            <label for="game">Game</label>
+            <select id="game" required>
+              <option value="">Select game</option>
+              <option>EA Sports FC</option>
+              <option>GTA V</option>
+              <option>Call of Duty</option>
+              <option>Mortal Kombat</option>
+              <option>Need for Speed</option>
+              <option>Other</option>
+            </select>
+
+            <label for="date">Booking date</label>
+            <input id="date" type="date" required>
+
+            <label for="time">Start time</label>
+            <input id="time" type="time" required>
+
+            <label for="duration">Duration</label>
+            <select id="duration" required>
+              <option value="">Choose duration</option>
+              <option value="1">1 hour</option>
+              <option value="2">2 hours</option>
+              <option value="3">3 hours</option>
+              <option value="4">4 hours</option>
+              <option value="5">5 hours</option>
+              <option value="6">6 hours</option>
+            </select>
+
+            <label for="bookingCity">City</label>
+            <input id="bookingCity" required autocomplete="address-level2" placeholder="Your city">
+
+            <label for="bookingAddress">Delivery address</label>
+            <textarea id="bookingAddress" required autocomplete="street-address" placeholder="Full delivery address"></textarea>
+
+            <label for="idCard">Photo of your ID card</label>
+            <input id="idCard" type="file" accept="image/*" capture="environment" required>
+            <p class="note">We ask for your ID only to verify the booking. This website does not upload or store the photo: it stays on your phone and you send it to us directly through WhatsApp or your phone's share menu.</p>
+
+            <label class="check"><input type="checkbox" id="idConsent" required> I understand why my ID photo is requested and agree to send it to Play At Home.</label>
+
+            <label for="bookingDetails">Additional details (optional)</label>
+            <textarea id="bookingDetails" placeholder="Anything else we should know"></textarea>
+
+            <div class="summary" aria-live="polite"><span id="summaryText">Choose a console and duration</span><strong id="summaryTotal">$0</strong></div>
+
+            <p class="error" id="bookingError" role="alert"></p>
+            <button class="btn" type="submit">Send booking request</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- MARKETPLACE -->
+    <section id="marketplace" class="page">
+      <div class="hero small">
+        <h1>MARKET <span class="green">PLAYS</span></h1>
+        <p>Buy, sell and discover gaming products.</p>
+      </div>
+      <div class="container">
+        <h2>Explore products</h2>
+        <div class="categories" id="categories">
+          <button class="on" data-cat="all">All</button>
+          <button data-cat="console">Consoles</button>
+          <button data-cat="controller">Controllers</button>
+          <button data-cat="games">Games</button>
+          <button data-cat="accessory">Accessories</button>
+        </div>
+
+        <div class="products">
+          <div class="product" data-category="console">
+            <img src="https://placehold.co/600x400/222/fff?text=PlayStation+5" alt="PlayStation 5" loading="lazy">
+            <div class="product-info">
+              <h3>PlayStation 5</h3>
+              <p>Contact for price</p>
+              <button class="btn" data-buy="PlayStation 5">Order now</button>
+            </div>
+          </div>
+          <div class="product" data-category="console">
+            <img src="https://placehold.co/600x400/222/fff?text=PS4+Pro" alt="PS4 Pro" loading="lazy">
+            <div class="product-info">
+              <h3>PS4 Pro</h3>
+              <p>Contact for price</p>
+              <button class="btn" data-buy="PS4 Pro">Order now</button>
+            </div>
+          </div>
+          <div class="product" data-category="controller">
+            <img src="https://placehold.co/600x400/222/fff?text=Controller" alt="Gaming controller" loading="lazy">
+            <div class="product-info">
+              <h3>Gaming controller</h3>
+              <p>Contact for price</p>
+              <button class="btn" data-buy="Gaming Controller">Order now</button>
+            </div>
+          </div>
+          <div class="product" data-category="games">
+            <img src="https://placehold.co/600x400/222/fff?text=Video+Games" alt="Video games" loading="lazy">
+            <div class="product-info">
+              <h3>Video games</h3>
+              <p>Contact for price</p>
+              <button class="btn" data-buy="Video Games">Order now</button>
+            </div>
+          </div>
+          <div class="product" data-category="accessory">
+            <img src="https://placehold.co/600x400/222/fff?text=Accessories" alt="Gaming accessories" loading="lazy">
+            <div class="product-info">
+              <h3>Gaming accessories</h3>
+              <p>Contact for price</p>
+              <button class="btn" data-buy="Gaming Accessories">Order now</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-box" id="orderBox">
+          <h2>Order a product</h2>
+          <form id="orderForm" novalidate>
+            <label for="customerName">Your name</label>
+            <input id="customerName" required autocomplete="name">
+
+            <label for="customerPhone">Phone number</label>
+            <input id="customerPhone" type="tel" required autocomplete="tel" inputmode="tel">
+
+            <label for="selectedProduct">Product</label>
+            <input id="selectedProduct" required placeholder="Tap “Order now” on a product">
+
+            <label for="customerCity">City</label>
+            <input id="customerCity" required autocomplete="address-level2">
+
+            <label for="customerAddress">Delivery address</label>
+            <textarea id="customerAddress" required autocomplete="street-address"></textarea>
+
+            <label for="orderDetails">Additional details (optional)</label>
+            <textarea id="orderDetails"></textarea>
+
+            <p class="error" id="orderError" role="alert"></p>
+            <button class="btn" type="submit">Send order on WhatsApp</button>
+          </form>
+        </div>
+
+        <div class="form-box">
+          <h2>Sell your product</h2>
+          <form id="sellForm" novalidate>
+            <label for="sellerName">Your name</label>
+            <input id="sellerName" required autocomplete="name">
+
+            <label for="sellerPhone">Phone number</label>
+            <input id="sellerPhone" type="tel" required autocomplete="tel" inputmode="tel">
+
+            <label for="saleProduct">Product name</label>
+            <input id="saleProduct" required>
+
+            <label for="saleCategory">Category</label>
+            <select id="saleCategory">
+              <option>Console</option>
+              <option>Controller</option>
+              <option>Video game</option>
+              <option>Accessory</option>
+              <option>Gaming setup</option>
+            </select>
+
+            <label for="salePrice">Asking price (MAD)</label>
+            <input id="salePrice" type="number" min="1" inputmode="numeric" required>
+
+            <label for="saleCondition">Condition</label>
+            <select id="saleCondition">
+              <option>Brand new</option>
+              <option>Used – excellent</option>
+              <option>Used – good</option>
+            </select>
+
+            <label for="saleDetails">Product details</label>
+            <textarea id="saleDetails"></textarea>
+
+            <p class="error" id="sellError" role="alert"></p>
+            <button class="btn" type="submit">Submit product</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- PLAY & EARN -->
+    <section id="loyalty" class="page">
+      <div class="hero small">
+        <h1>PLAY <span class="green">&amp; EARN</span></h1>
+        <p>Every rental brings you closer to a free gaming hour.</p>
+      </div>
+      <div class="container">
+        <div class="points-box">
+          <div><h3>10 points</h3><p>Earn 10 points for every 5 rental hours.</p></div>
+          <div><h3>100 points</h3><p>Redeem 100 points for 1 free rental hour.</p></div>
+        </div>
+
+        <div class="form-box">
+          <h2>Points calculator</h2>
+          <label for="hours">Rental hours</label>
+          <input type="number" id="hours" min="0" step="1" value="5" inputmode="numeric">
+          <button class="btn" id="calcBtn" type="button">Calculate</button>
+          <h3 id="pointsResult" style="margin-top:24px;color:var(--accent)" aria-live="polite">You earn 10 points</h3>
+          <p class="note" id="freeHours"></p>
+          <div class="bar" aria-hidden="true"><i id="bar"></i></div>
+          <p class="note">This is an estimate. Actual points are verified and saved by the business.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <h3 class="green">PLAY AT HOME</h3>
+    <p>Gaming delivered to your door.</p>
+    <p><a id="footerWa" href="#" target="_blank" rel="noopener">Chat on WhatsApp</a></p>
+    <p style="margin-top:10px">© 2026 PLAY AT HOME</p>
+  </footer>
+
+  <div class="toast" id="toast" role="status"></div>
+
+  <script>
+    // ---------- Settings ----------
+    const WHATSAPP = "212776081034";            // country code + number, no "+"
+    const RATES = { "PlayStation": 18, "PS4 Pro": 8 }; // price per hour (USD)
+    const POINTS_PER_BLOCK = 10, HOURS_PER_BLOCK = 5, POINTS_PER_FREE_HOUR = 100;
+
+    const $ = id => document.getElementById(id);
+    const pages = [...document.querySelectorAll(".page")];
+    const navBtns = [...document.querySelectorAll("nav button")];
+
+    // ---------- Navigation ----------
+    function showPage(id, push = true) {
+      if (!$(id)) id = "home";
+      pages.forEach(p => p.classList.toggle("active", p.id === id));
+      navBtns.forEach(b => b.dataset.page === id ? b.setAttribute("aria-current", "page") : b.removeAttribute("aria-current"));
+      if (push) history.replaceState(null, "", "#" + id);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+    document.addEventListener("click", e => {
+      const t = e.target.closest("[data-page],[data-book],[data-buy],[data-cat]");
+      if (!t) return;
+      if (t.dataset.book) bookConsole(t.dataset.book);
+      else if (t.dataset.buy) selectProduct(t.dataset.buy);
+      else if (t.dataset.cat) filterProducts(t.dataset.cat, t);
+      else showPage(t.dataset.page);
+    });
+    window.addEventListener("hashchange", () => showPage(location.hash.slice(1), false));
+
+    function bookConsole(name) {
+      showPage("booking");
+      $("console").value = name;
+      updateSummary();
+    }
+
+    // ---------- Helpers ----------
+    function toast(msg) {
+      const t = $("toast");
+      t.textContent = msg; t.classList.add("show");
+      clearTimeout(toast.id); toast.id = setTimeout(() => t.classList.remove("show"), 3500);
+    }
+    function sendWhatsApp(message) {
+      window.open("https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(message), "_blank", "noopener");
+    }
+    function validPhone(v) { return /^[+\d][\d\s().-]{7,}$/.test(v.trim()); }
+    // Returns the first problem found, or "" if the form is fine
+    function check(form, errorId, extra) {
+      const err = $(errorId); err.textContent = "";
+      for (const f of form.querySelectorAll("[required]")) {
+        const empty = f.type === "checkbox" ? !f.checked : !f.value.trim();
+        if (empty) {
+          const label = f.type === "checkbox" ? "the consent box" : (form.querySelector(`label[for="${f.id}"]`)?.textContent || "this field");
+          err.textContent = f.type === "checkbox" ? "Please tick the consent box." : `Please fill in: ${label.toLowerCase()}.`;
+          f.focus(); return false;
+        }
+        if (f.type === "tel" && !validPhone(f.value)) {
+          err.textContent = "Please enter a valid phone number."; f.focus(); return false;
+        }
+      }
+      if (extra) { const m = extra(); if (m) { err.textContent = m; return false; } }
+      return true;
+    }
+
+    // ---------- Booking ----------
+    const today = new Date(); today.setMinutes(today.getMinutes() - today.getTimezoneOffset());
+    $("date").min = today.toISOString().slice(0, 10);
+
+    function updateSummary() {
+      const rate = RATES[$("console").value], h = Number($("duration").value);
+      $("summaryText").textContent = rate && h ? `${$("console").value} · ${h} hour${h > 1 ? "s" : ""} × $${rate}` : "Choose a console and duration";
+      $("summaryTotal").textContent = "$" + (rate && h ? rate * h : 0);
+    }
+    ["console", "duration"].forEach(id => $(id).addEventListener("change", updateSummary));
+
+    $("bookingForm").addEventListener("submit", async e => {
+      e.preventDefault();
+      const form = e.target;
+      const slotInPast = () => new Date(`${$("date").value}T${$("time").value}`) < new Date() ? "Please choose a start time in the future." : "";
+      if (!check(form, "bookingError", slotInPast)) return;
+
+      const idFile = $("idCard").files[0];
+      const h = Number($("duration").value), total = RATES[$("console").value] * h;
+      const message = [
+        "PLAY AT HOME - BOOKING REQUEST", "",
+        "Name: " + $("bookingName").value.trim(),
+        "Phone: " + $("bookingPhone").value.trim(),
+        "Console: " + $("console").value,
+        "Game: " + $("game").value,
+        "Date: " + $("date").value,
+        "Time: " + $("time").value,
+        `Duration: ${h} hour${h > 1 ? "s" : ""}`,
+        "Estimated total: $" + total,
+        "City: " + $("bookingCity").value.trim(),
+        "Address: " + $("bookingAddress").value.trim(),
+        "ID photo: selected by customer",
+        "Details: " + ($("bookingDetails").value.trim() || "-")
+      ].join("\n");
+
+      // Preferred: share text + photo together through the phone's share menu
+      if (navigator.canShare && navigator.share && navigator.canShare({ files: [idFile] })) {
+        try {
+          await navigator.share({ title: "PLAY AT HOME booking", text: message, files: [idFile] });
+          toast("Booking sent. We will confirm shortly.");
+          form.reset(); updateSummary();
+        } catch (err) {
+          if (err.name !== "AbortError") $("bookingError").textContent = "Sharing failed. Please try again.";
+        }
+      } else {
+        // Fallback: open WhatsApp with the details; the photo is attached by hand
+        sendWhatsApp(message + "\n\n(I will attach my ID photo in this chat.)");
+        toast("WhatsApp opened. Please attach your ID photo in the chat.");
+      }
+    });
+
+    // ---------- Marketplace ----------
+    function filterProducts(cat, btn) {
+      document.querySelectorAll(".product").forEach(p => {
+        p.style.display = cat === "all" || p.dataset.category === cat ? "" : "none";
+      });
+      document.querySelectorAll("#categories button").forEach(b => b.classList.toggle("on", b === btn));
+    }
+    function selectProduct(name) {
+      $("selectedProduct").value = name;
+      $("orderBox").scrollIntoView({ behavior: "smooth" });
+      $("customerName").focus({ preventScroll: true });
+    }
+
+    $("orderForm").addEventListener("submit", e => {
+      e.preventDefault();
+      if (!check(e.target, "orderError")) return;
+      sendWhatsApp([
+        "MARKET PLAYS - ORDER", "",
+        "Name: " + $("customerName").value.trim(),
+        "Phone: " + $("customerPhone").value.trim(),
+        "Product: " + $("selectedProduct").value.trim(),
+        "City: " + $("customerCity").value.trim(),
+        "Delivery address: " + $("customerAddress").value.trim(),
+        "Details: " + ($("orderDetails").value.trim() || "-")
+      ].join("\n"));
+    });
+
+    $("sellForm").addEventListener("submit", e => {
+      e.preventDefault();
+      if (!check(e.target, "sellError", () => Number($("salePrice").value) > 0 ? "" : "Please enter a price above 0.")) return;
+      sendWhatsApp([
+        "MARKET PLAYS - SELLING REQUEST", "",
+        "Seller: " + $("sellerName").value.trim(),
+        "Phone: " + $("sellerPhone").value.trim(),
+        "Product: " + $("saleProduct").value.trim(),
+        "Category: " + $("saleCategory").value,
+        "Price: " + $("salePrice").value + " MAD",
+        "Condition: " + $("saleCondition").value,
+        "Details: " + ($("saleDetails").value.trim() || "-")
+      ].join("\n"));
+    });
+
+    // ---------- Points calculator ----------
+    function calculatePoints() {
+      const hours = Math.max(0, Math.floor(Number($("hours").value) || 0));
+      const points = Math.floor(hours / HOURS_PER_BLOCK) * POINTS_PER_BLOCK;
+      const free = Math.floor(points / POINTS_PER_FREE_HOUR);
+      const toNext = POINTS_PER_FREE_HOUR - (points % POINTS_PER_FREE_HOUR);
+      $("pointsResult").textContent = `You earn ${points} point${points === 1 ? "" : "s"}`;
+      $("freeHours").textContent = free
+        ? `That is enough for ${free} free hour${free > 1 ? "s" : ""}.`
+        : `${toNext} more points to your first free hour.`;
+      $("bar").style.width = Math.min(100, (points % POINTS_PER_FREE_HOUR || (free ? 100 : 0))) + "%";
+    }
+    $("calcBtn").addEventListener("click", calculatePoints);
+    $("hours").addEventListener("input", calculatePoints);
+
+    // ---------- Init ----------
+    $("footerWa").href = "https://wa.me/" + WHATSAPP;
+    showPage(location.hash.slice(1) || "home", false);
+    calculatePoints();
+  </script>
+</body>
+</html>
