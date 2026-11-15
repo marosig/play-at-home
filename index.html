@@ -1,0 +1,746 @@
+!DOCTYPE html
+html lang=en
+head
+meta charset=UTF-8
+meta name=viewport content=width=device-width, initial-scale=1.0
+titlePLAY AT HOMEtitle
+
+style
+ {
+  margin 0;
+  padding 0;
+  box-sizing border-box;
+  font-family Arial, sans-serif;
+}
+
+body {
+  background #090909;
+  color white;
+}
+
+header {
+  background #111;
+  padding 20px 6%;
+  display flex;
+  justify-content space-between;
+  align-items center;
+  flex-wrap wrap;
+  gap 15px;
+  border-bottom 1px solid #292929;
+}
+
+.logo {
+  color #00e676;
+  font-size 25px;
+  font-weight 900;
+}
+
+nav {
+  display flex;
+  gap 10px;
+  flex-wrap wrap;
+}
+
+nav button {
+  background none;
+  border none;
+  color white;
+  cursor pointer;
+  font-weight bold;
+  padding 10px;
+}
+
+nav buttonhover {
+  color #00e676;
+}
+
+.page {
+  display none;
+}
+
+.page.active {
+  display block;
+}
+
+.hero {
+  min-height 420px;
+  display flex;
+  flex-direction column;
+  justify-content center;
+  align-items center;
+  text-align center;
+  padding 60px 20px;
+  background linear-gradient(135deg, #101010, #123d27);
+}
+
+.hero h1 {
+  font-size clamp(40px, 8vw, 75px);
+  font-weight 900;
+}
+
+.green {
+  color #00e676;
+}
+
+.hero p {
+  color #ccc;
+  margin 18px 0 25px;
+}
+
+.btn {
+  display inline-block;
+  background #00e676;
+  color #050505;
+  padding 14px 24px;
+  border none;
+  border-radius 7px;
+  font-weight bold;
+  cursor pointer;
+  text-decoration none;
+}
+
+.container {
+  max-width 1100px;
+  margin auto;
+  padding 45px 20px;
+}
+
+h2 {
+  font-size 30px;
+  margin-bottom 25px;
+}
+
+.cards {
+  display grid;
+  grid-template-columns repeat(auto-fit, minmax(230px, 1fr));
+  gap 20px;
+}
+
+.card {
+  background #161616;
+  border 1px solid #292929;
+  border-radius 12px;
+  padding 22px;
+}
+
+.card h3 {
+  margin-bottom 12px;
+}
+
+.card p {
+  color #bbb;
+  line-height 1.6;
+}
+
+.price {
+  color #00e676;
+  font-size 23px;
+  font-weight bold;
+  margin 15px 0;
+}
+
+.form-box {
+  background #151515;
+  padding 25px;
+  border-radius 12px;
+  max-width 650px;
+  margin 25px auto;
+}
+
+label {
+  display block;
+  margin 15px 0 8px;
+  color #ddd;
+}
+
+input, select, textarea {
+  width 100%;
+  padding 13px;
+  background #222;
+  border 1px solid #444;
+  border-radius 7px;
+  color white;
+}
+
+input[type=file] {
+  padding 12px;
+}
+
+textarea {
+  min-height 90px;
+  resize vertical;
+}
+
+inputfocus, selectfocus, textareafocus {
+  outline 1px solid #00e676;
+}
+
+.form-box .btn {
+  width 100%;
+  margin-top 20px;
+}
+
+.note {
+  color #aaa;
+  font-size 13px;
+  line-height 1.5;
+  margin-top 9px;
+}
+
+.products {
+  display grid;
+  grid-template-columns repeat(auto-fit, minmax(220px, 1fr));
+  gap 20px;
+}
+
+.product {
+  background #161616;
+  border-radius 12px;
+  overflow hidden;
+  border 1px solid #292929;
+}
+
+.product img {
+  width 100%;
+  height 175px;
+  object-fit cover;
+}
+
+.product-info {
+  padding 18px;
+}
+
+.product-info h3 {
+  margin-bottom 10px;
+}
+
+.product-info p {
+  color #00e676;
+  margin-bottom 15px;
+}
+
+.product-info .btn {
+  width 100%;
+  text-align center;
+}
+
+.categories {
+  display flex;
+  gap 10px;
+  flex-wrap wrap;
+  margin-bottom 25px;
+}
+
+.categories button {
+  background #222;
+  border 1px solid #444;
+  color white;
+  padding 11px 17px;
+  border-radius 7px;
+  cursor pointer;
+}
+
+.categories buttonhover {
+  background #00e676;
+  color black;
+}
+
+.points-box {
+  background #14271c;
+  border 1px solid #00a94f;
+  padding 25px;
+  border-radius 12px;
+  text-align center;
+  margin-bottom 25px;
+}
+
+.points-box h3 {
+  font-size 35px;
+  color #00e676;
+}
+
+footer {
+  text-align center;
+  background #111;
+  padding 30px 15px;
+  color #888;
+  margin-top 50px;
+}
+
+@media(max-width600px) {
+  header {
+    flex-direction column;
+  }
+
+  nav {
+    justify-content center;
+  }
+
+  nav button {
+    font-size 12px;
+    padding 7px;
+  }
+}
+style
+head
+
+body
+
+header
+  div class=logoPLAY AT HOMEdiv
+
+  nav
+    button onclick=showPage('home')HOMEbutton
+    button onclick=showPage('booking')BOOKINGbutton
+    button onclick=showPage('marketplace')MARKETPLACEbutton
+    button onclick=showPage('loyalty')PLAY & EARNbutton
+  nav
+header
+
+!-- HOME PAGE --
+section id=home class=page active
+
+  div class=hero
+    h1PLAY span class=greenAT HOMEspanh1
+    pYour gaming experience, delivered to your door.p
+    button class=btn onclick=showPage('booking')
+      BOOK YOUR PLAYSTATION
+    button
+  div
+
+  div class=container
+    h2OUR RENTALSh2
+
+    div class=cards
+
+      div class=card
+        h3PlayStation Rentalh3
+        pEnjoy gaming at home with our PlayStation rental service.p
+        div class=price$18  hourdiv
+        button class=btn onclick=bookConsole('PlayStation')
+          BOOK NOW
+        button
+      div
+
+      div class=card
+        h3PS4 Pro Rentalh3
+        pEnjoy your favourite games with the PS4 Pro.p
+        div class=price$8  hourdiv
+        button class=btn onclick=bookConsole('PS4 Pro')
+          BOOK NOW
+        button
+      div
+
+    div
+  div
+
+section
+
+!-- BOOKING PAGE --
+section id=booking class=page
+
+  div class=hero
+    h1BOOK YOUR span class=greenGAMEspanh1
+    pComplete the form to request your booking.p
+  div
+
+  div class=container
+    div class=form-box
+
+      h2Booking Formh2
+
+      form id=bookingForm
+
+        labelYour full name label
+        input id=bookingName required placeholder=Full name
+
+        labelPhone number label
+        input id=bookingPhone type=tel required placeholder=Phone number
+
+        labelChoose your console label
+        select id=console required
+          option value=Select consoleoption
+          optionPlayStationoption
+          optionPS4 Prooption
+        select
+
+        labelChoose your game label
+        select id=game required
+          option value=Select gameoption
+          optionEA Sports FCoption
+          optionGTA Voption
+          optionCall of Dutyoption
+          optionMortal Kombatoption
+          optionNeed for Speedoption
+          optionOtheroption
+        select
+
+        labelBooking date label
+        input id=date type=date required
+
+        labelStart time label
+        input id=time type=time required
+
+        labelDuration (hours) label
+        select id=duration required
+          option value=Choose durationoption
+          option value=11 houroption
+          option value=22 hoursoption
+          option value=33 hoursoption
+          option value=44 hoursoption
+          option value=55 hoursoption
+        select
+
+        labelYour city label
+        input id=bookingCity required placeholder=Your city
+
+        labelYour delivery address label
+        textarea id=bookingAddress required placeholder=Full delivery addresstextarea
+
+        labelTake a photo of your ID card label
+        input
+          id=idCard
+          type=file
+          accept=image
+          capture=environment
+          required
+        
+
+        p class=note
+          The ID photo is requested for booking verification.
+          Explain the purpose and how it will be protected before collecting it.
+          The photo is not stored by this website.
+        p
+
+        label
+          input type=checkbox id=idConsent required style=widthauto
+          I understand why this ID photo is being requested.
+        label
+
+        labelAdditional detailslabel
+        textarea id=bookingDetails placeholder=Anything elsetextarea
+
+        button class=btn type=submit
+          SEND BOOKING REQUEST
+        button
+
+      form
+    div
+  div
+
+section
+
+!-- MARKETPLACE PAGE --
+section id=marketplace class=page
+
+  div class=hero
+    h1MARKET span class=greenPLAYSspanh1
+    pBuy, sell and discover gaming products.p
+  div
+
+  div class=container
+
+    h2Explore Productsh2
+
+    div class=categories
+      button onclick=filterProducts('all')Allbutton
+      button onclick=filterProducts('console')Consolesbutton
+      button onclick=filterProducts('controller')Controllersbutton
+      button onclick=filterProducts('games')Gamesbutton
+      button onclick=filterProducts('accessory')Accessoriesbutton
+    div
+
+    div class=products
+
+      div class=product data-category=console
+        img src=httpsplacehold.co600x400222ffftext=PlayStation+5 alt=PlayStation 5
+        div class=product-info
+          h3PlayStation 5h3
+          pContact for pricep
+          button class=btn onclick=selectProduct('PlayStation 5')BUY NOWbutton
+        div
+      div
+
+      div class=product data-category=console
+        img src=httpsplacehold.co600x400222ffftext=PS4+Pro alt=PS4 Pro
+        div class=product-info
+          h3PS4 Proh3
+          pContact for pricep
+          button class=btn onclick=selectProduct('PS4 Pro')BUY NOWbutton
+        div
+      div
+
+      div class=product data-category=controller
+        img src=httpsplacehold.co600x400222ffftext=Controller alt=Controller
+        div class=product-info
+          h3Gaming Controllerh3
+          pContact for pricep
+          button class=btn onclick=selectProduct('Gaming Controller')BUY NOWbutton
+        div
+      div
+
+      div class=product data-category=games
+        img src=httpsplacehold.co600x400222ffftext=Video+Games alt=Video games
+        div class=product-info
+          h3Video Gamesh3
+          pContact for pricep
+          button class=btn onclick=selectProduct('Video Games')BUY NOWbutton
+        div
+      div
+
+      div class=product data-category=accessory
+        img src=httpsplacehold.co600x400222ffftext=Gaming+Accessories alt=Gaming accessories
+        div class=product-info
+          h3Gaming Accessoriesh3
+          pContact for pricep
+          button class=btn onclick=selectProduct('Gaming Accessories')BUY NOWbutton
+        div
+      div
+
+    div
+
+    div class=form-box id=orderBox
+      h2Order a Producth2
+
+      form id=orderForm
+
+        labelYour name label
+        input id=customerName required
+
+        labelPhone number label
+        input id=customerPhone type=tel required
+
+        labelProduct label
+        input id=selectedProduct required
+
+        labelYour city label
+        input id=customerCity required
+
+        labelYour delivery address label
+        textarea id=customerAddress requiredtextarea
+
+        labelAdditional detailslabel
+        textarea id=orderDetailstextarea
+
+        button class=btn type=submitSEND ORDER ON WHATSAPPbutton
+      form
+    div
+
+    div class=form-box
+      h2Sell Your Producth2
+
+      form id=sellForm
+
+        labelYour name label
+        input id=sellerName required
+
+        labelProduct name label
+        input id=saleProduct required
+
+        labelCategory label
+        select id=saleCategory
+          optionConsoleoption
+          optionControlleroption
+          optionVideo gameoption
+          optionAccessoryoption
+          optionGaming setupoption
+        select
+
+        labelAsking price (MAD) label
+        input id=salePrice type=number required
+
+        labelCondition label
+        select id=saleCondition
+          optionBrand newoption
+          optionUsed - excellentoption
+          optionUsed - goodoption
+        select
+
+        labelProduct detailslabel
+        textarea id=saleDetailstextarea
+
+        button class=btn type=submitSUBMIT PRODUCTbutton
+      form
+    div
+
+  div
+section
+
+!-- PLAY AND EARN PAGE --
+section id=loyalty class=page
+
+  div class=hero
+    h1PLAY span class=green& EARNspanh1
+    pEvery rental brings you closer to a free gaming hour.p
+  div
+
+  div class=container
+
+    div class=points-box
+      h310 POINTSh3
+      pEarn 10 points for every 5 rental hours.p
+      br
+      h3100 POINTSh3
+      pRedeem 100 points for 1 free rental hour.p
+    div
+
+    div class=form-box
+      h2Points Calculatorh2
+
+      labelRental hourslabel
+      input type=number id=hours min=0 value=5
+
+      button class=btn onclick=calculatePoints()CALCULATEbutton
+
+      h3 id=pointsResult style=margin-top25px;color#00e676
+        You earn 10 points
+      h3
+
+      p class=note
+        This is an estimate. Actual customer points must be verified
+        and saved by the business.
+      p
+    div
+
+  div
+section
+
+footer
+  h3 class=greenPLAY AT HOMEh3
+  pGaming delivered to your door.p
+  p© 2026 PLAY AT HOMEp
+footer
+
+script
+const whatsapp = 212776081034;
+
+function showPage(pageId) {
+  document.querySelectorAll(.page).forEach(page = {
+    page.classList.remove(active);
+  });
+
+  document.getElementById(pageId).classList.add(active);
+  window.scrollTo({ top 0, behavior smooth });
+}
+
+function bookConsole(name) {
+  showPage(booking);
+  document.getElementById(console).value = name;
+}
+
+function filterProducts(category) {
+  document.querySelectorAll(.product).forEach(product = {
+    product.style.display =
+      category === all  product.dataset.category === category
+       block
+       none;
+  });
+}
+
+function selectProduct(name) {
+  document.getElementById(selectedProduct).value = name;
+  document.getElementById(orderBox).scrollIntoView({
+    behavior smooth
+  });
+}
+
+function sendWhatsApp(message) {
+  const url = httpswa.me + whatsapp +
+    text= + encodeURIComponent(message);
+
+  window.open(url, _blank);
+}
+
+ BOOKING FORM
+document.getElementById(bookingForm).addEventListener(submit, async function(e) {
+  e.preventDefault();
+
+  const idFile = document.getElementById(idCard).files[0];
+
+  if (!idFile) {
+    alert(Please take a photo of your ID card.);
+    return;
+  }
+
+  const message =
+    PLAY AT HOME - BOOKING REQUESTnn +
+    Name  + bookingName.value + n +
+    Phone  + bookingPhone.value + n +
+    Console  + console.value + n +
+    Game  + game.value + n +
+    Date  + date.value + n +
+    Time  + time.value + n +
+    Duration  + duration.value +  hoursn +
+    City  + bookingCity.value + n +
+    Address  + bookingAddress.value + n +
+    ID photo selected by customern +
+    Details  + bookingDetails.value;
+
+   Share the selected photo through the phone's share menu
+  if (navigator.canShare && navigator.share &&
+      navigator.canShare({ files [idFile] })) {
+    try {
+      await navigator.share({
+        title PLAY AT HOME booking,
+        text message,
+        files [idFile]
+      });
+    } catch (error) {
+      if (error.name !== AbortError) {
+        alert(Photo sharing was not completed. Please try again.);
+      }
+    }
+  } else {
+    alert(
+      Your browser cannot share the ID photo automatically.  +
+      WhatsApp will open with your booking details, but the photo  +
+      will need to be attached manually.
+    );
+    sendWhatsApp(message);
+  }
+});
+
+ MARKETPLACE ORDER FORM
+document.getElementById(orderForm).addEventListener(submit, function(e) {
+  e.preventDefault();
+
+  const message =
+    MARKET PLAYS - ORDERnn +
+    Name  + customerName.value + n +
+    Phone  + customerPhone.value + n +
+    Product  + selectedProduct.value + n +
+    City  + customerCity.value + n +
+    Delivery address  + customerAddress.value + n +
+    Details  + orderDetails.value;
+
+  sendWhatsApp(message);
+});
+
+ SELLER FORM
+document.getElementById(sellForm).addEventListener(submit, function(e) {
+  e.preventDefault();
+
+  const message =
+    MARKET PLAYS - SELLING REQUESTnn +
+    Seller  + sellerName.value + n +
+    Product  + saleProduct.value + n +
+    Category  + saleCategory.value + n +
+    Price  + salePrice.value +  MADn +
+    Condition  + saleCondition.value + n +
+    Details  + saleDetails.value;
+
+  sendWhatsApp(message);
+});
+
+ POINTS CALCULATOR
+function calculatePoints() {
+  const hours = Math.max(0, Number(document.getElementById(hours).value)  0);
+  const points = Math.floor(hours  5)  10;
+
+  document.getElementById(pointsResult).textContent =
+    You earn  + points +  points;
+}
+script
+
+body
+html
